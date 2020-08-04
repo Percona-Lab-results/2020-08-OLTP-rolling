@@ -1,0 +1,6 @@
+server: mysql
+buffer_pool: 25
+randtype: pareto
+io_capacity: 15000
+threads: 150
+storage: NVMe

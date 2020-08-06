@@ -1,2 +1,3 @@
 https://raw.githubusercontent.com/Percona-Lab-results/2020-08-OLTP-rolling/master/res-oltp-beast-node5-ubuntu-2020-08-06-09-05/io2000.BP140.threads80.bpi32
 https://raw.githubusercontent.com/Percona-Lab-results/2020-08-OLTP-rolling/master/res-oltp-beast-node5-ubuntu-2020-08-06-10-56/io2000.BP140.threads80.bpi64
+https://raw.githubusercontent.com/Percona-Lab-results/2020-08-OLTP-rolling/master/res-oltp-beast-node5-ubuntu-2020-08-06-12-30/io2000.BP140.threads150.bpi64

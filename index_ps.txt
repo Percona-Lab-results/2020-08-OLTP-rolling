@@ -17,3 +17,5 @@ https://raw.githubusercontent.com/Percona-Lab-results/2020-08-OLTP-rolling/maste
 https://raw.githubusercontent.com/Percona-Lab-results/2020-08-OLTP-rolling/master/res-oltp-beast-node3-ubuntu-2020-08-06-08-30/io2000.BP140.threads150.bpi16
 https://raw.githubusercontent.com/Percona-Lab-results/2020-08-OLTP-rolling/master/res-oltp-beast-node3-ubuntu-2020-08-06-08-30/io2000.BP140.threads150.bpi32
 https://raw.githubusercontent.com/Percona-Lab-results/2020-08-OLTP-rolling/master/res-oltp-beast-node3-ubuntu-2020-08-06-08-30/io2000.BP140.threads150.bpi64
+https://raw.githubusercontent.com/Percona-Lab-results/2020-08-OLTP-rolling/master/res-oltp-beast-node3-ubuntu-2020-08-06-12-37/io2000.BP140.threads150.bpi128
+https://raw.githubusercontent.com/Percona-Lab-results/2020-08-OLTP-rolling/master/res-oltp-beast-node3-ubuntu-2020-08-06-12-37/io2000.BP140.threads150.bpi96

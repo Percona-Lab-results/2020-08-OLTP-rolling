@@ -1,0 +1,8 @@
+server: ps8
+buffer_pool: 140
+randtype: pareto
+io_capacity: 4000
+threads: 150
+storage: SSD
+host: beast-node3-ubuntu
+buffer_pool_instances: 2

@@ -1,0 +1,7 @@
+server: mysql8
+buffer_pool: 140
+randtype: pareto
+io_capacity: 3000
+threads: 80
+storage: SSD
+host: beast-node5-ubuntu

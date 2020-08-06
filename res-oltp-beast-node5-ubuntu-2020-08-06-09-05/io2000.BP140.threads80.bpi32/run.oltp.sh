@@ -79,7 +79,7 @@ echo 2 > /sys/block/sda/queue/rq_affinity
 
 
 BP=140
-threads=150
+threads=80
 randtype="pareto"
 
 for io in 2000
@@ -94,7 +94,7 @@ fstrim /mnt/data
 
 iomax=$(( 3*$io/2 ))
 
-startmysql "--datadir=$DATADIR --innodb-io-capacity=${io} --innodb_io_capacity_max=$iomax --innodb_buffer_pool_size=${BP}GB --innodb_buffer_pool_instances=64" &
+startmysql "--datadir=$DATADIR --innodb-io-capacity=${io} --innodb_io_capacity_max=$iomax --innodb_buffer_pool_size=${BP}GB --innodb_buffer_pool_instances=32" &
 sleep 10
 waitmysql
 
@@ -106,7 +106,7 @@ waitmysql
 for i in $threads
 do
 
-runid="io$io.BP${BP}.threads${i}.bpi64"
+runid="io$io.BP${BP}.threads${i}.bpi32"
 
         OUTDIR=$RUNDIR/$runid
         mkdir -p $OUTDIR
@@ -123,7 +123,7 @@ echo "host: `hostname`" >> $OUTDIR/params.txt
         # start stats collection
 
 
-        time=10000
+        time=3600 
         sysbench oltp_read_write --threads=$i --time=$time --tables=40 --table_size=10000000 --mysql-host=127.0.0.1 --mysql-user=sbtest --mysql-password=sbtest --max-requests=0 --report-interval=1 --mysql-db=sbtest --mysql-ssl=off --create_table_options='DEFAULT CHARSET=utf8mb4' --report_csv=yes --rand-type=$randtype run |  tee -a $OUTDIR/results.txt
 #        /mnt/data/vadim/bench/sysbench-tpcc/tpcc.lua --mysql-host=127.0.0.1 --mysql-user=sbtest --mysql-password=sbtest --mysql-db=sbtest --time=$time --threads=$i --report-interval=1 --tables=10 --scale=100 --use_fk=0 --report-csv=yes run |  tee -a $OUTDIR/res.thr${i}.txt
 

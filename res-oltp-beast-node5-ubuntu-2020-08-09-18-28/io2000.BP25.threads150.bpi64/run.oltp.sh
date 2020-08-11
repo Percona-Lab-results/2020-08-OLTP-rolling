@@ -84,7 +84,7 @@ randtype="pareto"
 
 for io in 2000
 do
-for bpi in 1 2 4 8 16 32 64
+for bpi in 1 2 4 8 16 32
 do
 
 echo "Restoring backup"
@@ -108,7 +108,7 @@ waitmysql
 for i in $threads
 do
 
-runid="io$io.BP${BP}.threads${i}.bpi$bpi"
+runid="io$io.BP${BP}.threads${i}.bpi64"
 
         OUTDIR=$RUNDIR/$runid
         mkdir -p $OUTDIR

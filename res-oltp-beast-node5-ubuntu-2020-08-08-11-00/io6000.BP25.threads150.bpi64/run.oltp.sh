@@ -82,9 +82,7 @@ BP=25
 threads=150
 randtype="pareto"
 
-for io in 2000
-do
-for bpi in 1 2 4 8 16 32 64
+for io in 1000 2000 4000 6000 8000 10000
 do
 
 echo "Restoring backup"
@@ -96,7 +94,7 @@ fstrim /mnt/data
 
 iomax=$(( 3*$io/2 ))
 
-startmysql "--datadir=$DATADIR --innodb-io-capacity=${io} --innodb_io_capacity_max=$iomax --innodb_buffer_pool_size=${BP}GB --innodb_buffer_pool_instances=$bpi" &
+startmysql "--datadir=$DATADIR --innodb-io-capacity=${io} --innodb_io_capacity_max=$iomax --innodb_buffer_pool_size=${BP}GB --innodb_buffer_pool_instances=64" &
 sleep 10
 waitmysql
 
@@ -108,7 +106,7 @@ waitmysql
 for i in $threads
 do
 
-runid="io$io.BP${BP}.threads${i}.bpi$bpi"
+runid="io$io.BP${BP}.threads${i}.bpi64"
 
         OUTDIR=$RUNDIR/$runid
         mkdir -p $OUTDIR
@@ -121,7 +119,6 @@ echo "io_capacity: $io" >> $OUTDIR/params.txt
 echo "threads: $i" >> $OUTDIR/params.txt
 echo "storage: SSD" >> $OUTDIR/params.txt
 echo "host: `hostname`" >> $OUTDIR/params.txt
-echo "buffer_pool_instances: $bpi" >> $OUTDIR/params.txt
 
         # start stats collection
 
@@ -135,5 +132,5 @@ echo "buffer_pool_instances: $bpi" >> $OUTDIR/params.txt
 done
 
 shutdownmysql
-done
+
 done

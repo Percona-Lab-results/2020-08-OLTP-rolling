@@ -1,0 +1,7 @@
+https://raw.githubusercontent.com/Percona-Lab-results/2020-08-OLTP-rolling/master/res-oltp-beast-node5-ubuntu-2020-08-11-10-07/io2000.BP140.threads150.bpi1
+https://raw.githubusercontent.com/Percona-Lab-results/2020-08-OLTP-rolling/master/res-oltp-beast-node5-ubuntu-2020-08-11-10-07/io2000.BP140.threads150.bpi16
+https://raw.githubusercontent.com/Percona-Lab-results/2020-08-OLTP-rolling/master/res-oltp-beast-node5-ubuntu-2020-08-11-10-07/io2000.BP140.threads150.bpi2
+https://raw.githubusercontent.com/Percona-Lab-results/2020-08-OLTP-rolling/master/res-oltp-beast-node5-ubuntu-2020-08-11-10-07/io2000.BP140.threads150.bpi32
+https://raw.githubusercontent.com/Percona-Lab-results/2020-08-OLTP-rolling/master/res-oltp-beast-node5-ubuntu-2020-08-11-10-07/io2000.BP140.threads150.bpi4
+https://raw.githubusercontent.com/Percona-Lab-results/2020-08-OLTP-rolling/master/res-oltp-beast-node5-ubuntu-2020-08-11-10-07/io2000.BP140.threads150.bpi64
+https://raw.githubusercontent.com/Percona-Lab-results/2020-08-OLTP-rolling/master/res-oltp-beast-node5-ubuntu-2020-08-11-10-07/io2000.BP140.threads150.bpi8

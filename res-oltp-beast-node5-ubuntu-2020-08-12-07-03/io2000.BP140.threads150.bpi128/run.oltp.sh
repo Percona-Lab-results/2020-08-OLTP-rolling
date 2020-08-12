@@ -78,7 +78,7 @@ echo 256 > /sys/block/sda/queue/nr_requests
 echo 2 > /sys/block/sda/queue/rq_affinity
 
 
-BP=25
+BP=140
 threads=150
 randtype="pareto"
 

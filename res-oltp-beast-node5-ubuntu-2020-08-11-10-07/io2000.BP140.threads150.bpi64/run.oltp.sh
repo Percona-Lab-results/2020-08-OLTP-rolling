@@ -78,14 +78,13 @@ echo 256 > /sys/block/sda/queue/nr_requests
 echo 2 > /sys/block/sda/queue/rq_affinity
 
 
-BP=25
+BP=140
 threads=150
 randtype="pareto"
 
 for io in 2000
 do
-#for bpi in 1 2 4 8 16 32 64
-for bpi in 96 128 160
+for bpi in 1 2 4 8 16 32 64
 do
 
 echo "Restoring backup"

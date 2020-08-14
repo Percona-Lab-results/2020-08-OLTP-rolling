@@ -82,7 +82,7 @@ BP=140
 threads=150
 randtype="pareto"
 
-for io in 1000 2000 4000 6000 8000 10000 15000 25000
+for io in 500 700 
 do
 for bpi in 64
 #for bpi in 96 128 160

@@ -78,12 +78,11 @@ echo 256 > /sys/block/sda/queue/nr_requests
 echo 2 > /sys/block/sda/queue/rq_affinity
 
 
-BP=25
+BP=140
 threads=150
 randtype="pareto"
-io=2000
 
-for lru in 64 128 256 512 1024 2048 4096 8192
+for io in 500 700 
 do
 for bpi in 64
 #for bpi in 96 128 160
@@ -98,7 +97,7 @@ fstrim /mnt/data
 
 iomax=$(( 3*$io/2 ))
 
-startmysql "--datadir=$DATADIR --innodb-io-capacity=${io} --innodb_io_capacity_max=$iomax --innodb_buffer_pool_size=${BP}GB --innodb_buffer_pool_instances=$bpi --innodb-lru-scan-depth=$lru" &
+startmysql "--datadir=$DATADIR --innodb-io-capacity=${io} --innodb_io_capacity_max=$iomax --innodb_buffer_pool_size=${BP}GB --innodb_buffer_pool_instances=$bpi" &
 sleep 10
 waitmysql
 
@@ -110,7 +109,7 @@ waitmysql
 for i in $threads
 do
 
-runid="io$io.BP${BP}.threads${i}.bpi$bpi.lru$lru"
+runid="io$io.BP${BP}.threads${i}.bpi$bpi"
 
         OUTDIR=$RUNDIR/$runid
         mkdir -p $OUTDIR
@@ -124,7 +123,6 @@ echo "threads: $i" >> $OUTDIR/params.txt
 echo "storage: SSD" >> $OUTDIR/params.txt
 echo "host: `hostname`" >> $OUTDIR/params.txt
 echo "buffer_pool_instances: $bpi" >> $OUTDIR/params.txt
-echo "lru_scan_depth: $lru" >> $OUTDIR/params.txt
 
         # start stats collection
 
